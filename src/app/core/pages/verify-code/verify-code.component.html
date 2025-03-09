@@ -1,0 +1,11 @@
+<form [formGroup]="verifyForm" (ngSubmit)="verify()" class="mx-sm-5">
+  <h3 class="title-form text-black fw-bold mb-4">Verify code</h3>
+  <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput" placeholder="Enter Code">
+    <label for="floatingInput">Enter Code</label>
+  </div>
+  <p class="text-end mb-5">Didn’t receive a code?    <a routerLink="" class="text-primary ">Resend</a>
+  </p>
+
+  <a class="btn btn-primary btn-lg d-block w-100 " routerLink="../set-password">Verify</a>
+</form>

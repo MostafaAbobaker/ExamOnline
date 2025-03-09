@@ -1,0 +1,29 @@
+$main-color :#4461F2;
+
+$border-radius-sm: rem(8px);
+$border-radius: rem(16px);
+$border-radius-lg: rem(20px);
+.text-primary {
+  color: $main-color !important;
+}
+.bg-primary {
+  background-color: $main-color !important;;
+}
+.border-primary {
+  border-color: $main-color !important;;
+}
+.btn-primary {
+  background-color: $main-color !important;
+  &:hover {
+    background-color: darken(#4461F2, 5%) !important;
+  }
+}
+
+.btn-outline-primary {
+  border-color: $main-color !important;
+  color: $main-color !important;
+  &:hover {
+    background-color: $main-color !important;
+    color: #fff !important;
+  }
+}

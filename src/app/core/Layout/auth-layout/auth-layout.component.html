@@ -1,0 +1,49 @@
+<section class="auth">
+  <div class="container-fluid">
+    <div class="row g-4">
+      <div class="d-none d-md-block col-md-6 px-0">
+        <div class="side-content">
+          <h2 class="title-content">Welcome to <span class="text-primary">Elevate</span>
+            </h2>
+            <p>Quidem autem voluptatibus qui quaerat aspernatur architecto natus</p>
+            <figure class="image">
+              <img src="./assets/images/bro.svg" alt="" class=" h-100 object-fit-caver">
+            </figure>
+          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-content">
+        <ul class="nav justify-content-end ">
+          <li class="nav-item">
+            @if(language ==='en') {
+              <a class="nav-link text-black fw-bold"   (click)="lang('ar')">English</a>
+            }
+            @else {
+              <a class="nav-link text-black fw-bold"  (click)="lang('en')">عربى</a>
+            }
+          </li>
+          <li class="nav-item">
+            <a class="nav-link  " routerLink="login" routerLinkActive="active">Sign in</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="register" routerLinkActive="active">Register</a>
+          </li>
+
+        </ul>
+        <!-- Start Form -->
+        <router-outlet></router-outlet>
+        <!-- End Form -->
+        <h5 class="title-change-login">
+          <span>Or Continue with</span>
+        </h5>
+        <div class="social-media">
+          <a href="#" class="icon-facebook" target="_blank" ><img src="../../../../assets/images/google.png" class="w-100 h-100 object-fit-contain" alt=""></a>
+          <a href="#" class="icon-google"  target="_blank"><img src="../../../../assets/images/twitter.png" class="w-100 h-100 object-fit-contain" alt=""></a>
+          <a href="#" class="icon-twitter" target="_blank" ><img src="../../../../assets/images/facebook.png" class="w-100 h-100 object-fit-contain" alt=""></a>
+          <a href="#" class="icon-apple" target="_blank" ><img src="../../../../assets/images/apple-logo.png" class="w-100 h-100 object-fit-contain" alt=""></a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
