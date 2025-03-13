@@ -1,15 +1,15 @@
 <form [formGroup]="loginForm" (ngSubmit)="login()" class="mx-sm-5">
   <h3 class="title-form text-black fw-bold mb-4">Sign in</h3>
   <div class="form-floating mb-5">
-    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+    <input type="email" class="form-control" id="floatingInput" formControlName="email" placeholder="name@example.com">
     <label for="floatingInput">Enter Email</label>
   </div>
   <div class="form-floating mb-3 input-password">
-    <input [type]="passwordStatus ? 'text':'password'" class="form-control" suggested="current-password" id="floatingPassword" placeholder="Password" autocomplete="off">
+    <input [type]="passwordStatus ? 'text':'password'" class="form-control" formControlName="password" suggested="current-password" id="floatingPassword" placeholder="Password" autocomplete="off">
     <label for="floatingPassword">Password</label>
     <a class="position-absolute top-50 translate-middle-y end-0 p-3 text-secondary" (click)="passwordStatus = !passwordStatus"><i class="fa-solid  " [class]="passwordStatus?'fa-eye' : 'fa-eye-slash'"></i></a>
 
   </div>
   <a routerLink="../forget-password" class="text-end mb-5 d-block">Recover Password ?</a>
-  <button class="btn btn-primary btn-lg d-block w-100 ">Sign in</button>
+  <button class="btn btn-primary btn-lg d-block w-100 " [disabled]="loginForm.invalid">Sign in</button>
 </form>
