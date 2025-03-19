@@ -1,4 +1,8 @@
+@use "sass:color";
+
+
 @use './function' as *;
+
 $main-color :#4461F2;
 
 $border-radius-sm: rem(8);
@@ -16,8 +20,11 @@ $border-radius-lg: rem(20);
 .btn-primary {
   background-color: $main-color !important;
   &:hover {
-    background-color: darken($main-color, 5%) !important;
-    // background-color: scale($main-color,  50%);
+    // background-color: darken($main-color, 5%) !important;
+
+    // background-color: color.adjust($main-color, $lightness: 50%) !important; // Convert Code Color to Hsl
+    // background-color: color.scale($main-color, $lightness: 5%) !important; //Covert Code color to RGB
+    background-color: color-mix(in srgb, $main-color, black 10%) !important; // Mix with 10% black
   }
 }
 
