@@ -23,8 +23,8 @@ $border-radius-lg: rem(20);
     // background-color: darken($main-color, 5%) !important;
 
     // background-color: color.adjust($main-color, $lightness: 50%) !important; // Convert Code Color to Hsl
-    // background-color: color.scale($main-color, $lightness: 5%) !important; //Covert Code color to RGB
-    background-color: color-mix(in srgb, $main-color, black 10%) !important; // Mix with 10% black
+    background-color: color.scale($main-color, $lightness: -5%) !important; //Covert Code color to RGB
+    // background-color: color-mix(in srgb, $main-color, black 10%) !important; // Mix with 10% black
   }
 }
 
