@@ -1,8 +1,9 @@
+@use './function' as *;
 $main-color :#4461F2;
 
-$border-radius-sm: rem(8px);
-$border-radius: rem(16px);
-$border-radius-lg: rem(20px);
+$border-radius-sm: rem(8);
+$border-radius: rem(16);
+$border-radius-lg: rem(20);
 .text-primary {
   color: $main-color !important;
 }
@@ -15,7 +16,8 @@ $border-radius-lg: rem(20px);
 .btn-primary {
   background-color: $main-color !important;
   &:hover {
-    background-color: darken(#4461F2, 5%) !important;
+    background-color: darken($main-color, 5%) !important;
+    // background-color: scale($main-color,  50%);
   }
 }
 

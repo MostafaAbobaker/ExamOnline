@@ -1,53 +1,50 @@
-@import '../../../../assets/scss/abstracts';
+@use '../../../../assets/scss/abstracts' as *;
 
 .auth {
 
   .side-content {
     background-color: #F0F4FC;
-    border-start-end-radius:rem(100px) ;
-    border-end-end-radius:rem(100px) ;
-    padding: min(rem(80px), 10vw);
-    padding-inline-end: rem(147px);
+    border-start-end-radius:rem(100) ;
+    border-end-end-radius:rem(100) ;
+    padding: min(rem(80), 10vw);
+    padding-inline-end: rem(147);
     height: 100dvh;
-    position: fixed;
+    position: sticky;
     top: 0;
     inset-inline-start: 0;
-    width: 100%;
-    max-width: calc(50% + rem(16px));
-    height: 100dvh;
     h2.title-content {
-      font-size: clamp( rem(30px) , calc(2.9vw + rem(16)) , rem(100px));
+      font-size: clamp( rem(30) , calc(2.9vw + rem(16)) , rem(100));
 
-      // font-size: rem(60px);
+      // font-size: rem(60);
       font-weight: 700;
       color: #000;
-      margin-bottom: rem(8px);
+      margin-bottom: rem(8);
     }
     p {
-      font-size: rem(18px);
+      font-size: rem(18);
       font-weight: 400;
       color: #000;
     }
     .image {
-      // width: rem(383.77px);
-      height: rem(350px);
+      // width: rem(383.77);
+      height: rem(350);
       margin-bottom: 0;
       // margin-inline: auto;
 
     }
   }
   .form-content {
-    padding: min(rem(40px), 5vw);
-    // padding: rem(40px);
+    padding: min(rem(40), 5vw);
+    // padding: rem(40);
     ul.nav {
-      margin-bottom: rem(60px);
-      gap: min(rem(16px), 2vw);
+      margin-bottom: rem(60);
+      gap: min(rem(16), 2vw);
       li:not(:first-child) {
 
         .nav-link {
           border: 1px solid #E0E0E9;
           color: $main-color;
-          border-radius: rem(16px);
+          border-radius: rem(16);
           transition: all 0.3s ease-in-out;
 
           &:not(.active):hover {
@@ -63,20 +60,20 @@
       }
     }
     .title-form {
-      font-size: rem(24px);
+      font-size: rem(24);
       font-weight: 700;
       color: #000;
-      margin-bottom: rem(30px);
+      margin-bottom: rem(30);
     }
     .title-change-login {
-      font-size: rem(16px);
+      font-size: rem(16);
       font-weight: 400;
       color: #6C737F;
-      margin-bottom: rem(20px);
+      margin-bottom: rem(20);
       position: relative;
       isolation: isolate;
       text-align: center;
-      margin-block: rem(32px);
+      margin-block: rem(32);
       span {
         padding-inline: 10px;
         background-color: #fff;
@@ -95,16 +92,16 @@
     .social-media {
       display: flex;
       justify-content: center;
-      gap: rem(32px);
+      gap: rem(32);
 
       a {
-        padding: rem(15px);
+        padding: rem(15);
         background-color: #fff;
-        border-radius: rem(16px);
+        border-radius: rem(16);
         border: 1px solid #E0E0E9;
         box-shadow: 0px 18px 30px #4461F21C;
-        width: rem(64px);
-        height: rem(64px);
+        width: rem(64);
+        height: rem(64);
         display: grid;
         place-items: center;
         &:hover {

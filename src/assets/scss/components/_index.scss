@@ -1,1 +1,3 @@
-@import 'form','button';
+// @import 'form','button';
+@forward  'form';
+@forward  'button';
