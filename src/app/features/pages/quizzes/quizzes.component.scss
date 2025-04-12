@@ -1,0 +1,55 @@
+@use '../../../../assets/scss/abstracts' as *;
+
+.quizzes-page {
+  padding: rem(24) rem(32);
+  border-radius: rem(20);
+  box-shadow: 0 rem(15) rem(40) rgba(#000,.05);
+  background-color: #fff;
+  margin-bottom: rem(40);
+  @media (max-width: 768px) {
+    padding: rem(16) rem(24);
+  }
+  .image {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .card-quiz {
+    position: relative;
+    border-radius: rem(8);
+    overflow: hidden;
+    .body-quiz {
+      position: absolute;
+      bottom: 5%;
+      inset-inline-end: 5%;
+      inset-inline-start: 5%;
+      background-color: rgba($main-color, .4);
+      border-radius: rem(8);
+      padding: rem(14);
+      color: #fff;
+      isolation: isolate;
+      z-index: 2;
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: $main-color;
+        filter: blur(40px);
+        border-radius: rem(8);
+        z-index: -1;
+
+      }
+      .title {
+        font-size: rem(13);
+        font-weight: bold;
+        text-transform: capitalize;
+        text-align: center;
+      }
+      p {
+        font-size: rem(13);
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="header__container">
+
+    <div class="header__logo d-md-none d-block me-2">
+
+      <img src="../../../../../assets/images/logo.png" alt="Logo">
+
+    </div>
+    <span class="icon-search d-md-none d-block" (click)="headerSearch = !headerSearch">      <i class="fa-solid fa-magnifying-glass"></i>
+    </span>
+    <!-- <div class="header__search " [ngClass]="{'d-none': !headerSearch, 'd-flex': headerSearch}"> -->
+    <div class="header__search " [class.show]="!headerSearch">
+
+    <div class="input-group">
+      <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+        <label for="floatingInputGroup1">Search Quiz</label>
+      </div>
+    </div>
+      <button class="btn btn-primary">Start Quiz</button>
+    </div>
+
+    <div class="header__user">
+
+      <span class="material-icons icon">
+        <img src="../../../../../assets/images/user.png" alt="">
+      </span>          <!-- Filled -->
+
+
+    </div>
+
+  </div>
+
+</header>

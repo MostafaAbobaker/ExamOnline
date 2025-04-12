@@ -91,11 +91,12 @@
     }
     .social-media {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       gap: rem(32);
 
       a {
-        padding: rem(15);
+        padding: min(rem(15), 4vw);
         background-color: #fff;
         border-radius: rem(16);
         border: 1px solid #E0E0E9;

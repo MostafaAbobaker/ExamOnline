@@ -3,16 +3,30 @@
   <div class="form-floating mb-5">
     <input type="email" class="form-control" id="email" formControlName="email" placeholder="name@example.com">
     <label for="email">Enter Email</label>
+    <div class="text-danger" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+      <span *ngIf="loginForm.get('email')?.getError('required')">Email is required</span>
+      <span *ngIf="loginForm.get('email')?.getError('email')">Email is not valid</span>
+
+    </div>
+
   </div>
-  <div class="form-floating mb-3 input-password">
+  <div class="mb-3">
+    <div class="form-floating  input-password">
     <input [type]="passwordStatus ? 'text':'password'" class="form-control" formControlName="password" suggested="current-password" id="password" placeholder="Password" autocomplete="off">
     <label for="password">Password</label>
     <a class="position-absolute top-50 translate-middle-y end-0 p-3 text-secondary" (click)="passwordStatus = !passwordStatus"><i class="fa-solid  " [class]="passwordStatus?'fa-eye' : 'fa-eye-slash'"></i></a>
-
+  </div>
+  <div class="text-danger" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+    <span *ngIf="loginForm.get('password')?.getError('required')">Password is required</span>
+  </div>
   </div>
   <div class="text-end mb-5" >
     <a routerLink="../forget-password" class="    ">Recover Password ?</a>
 
   </div>
-  <button class="btn btn-primary btn-lg d-block w-100 " [disabled]="loginForm.invalid">Sign in</button>
+  <button class="btn btn-primary btn-lg d-block w-100 " [disabled]="loginForm.invalid">
+    <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span *ngIf="!loading">Sign in</span>
+
+    </button>
 </form>

@@ -8,15 +8,18 @@ import {
 } from '@angular/platform-browser';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { generalInterceptor } from './shared/interceptor/general.interceptor';
+import { provideStore } from '@ngrx/store';
+import { tokenReducer } from './store/token.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(
-      withFetch(),
-      withInterceptors([generalInterceptor]) // Correct way to add the interceptor
+    provideHttpClient(withFetch(), withInterceptors([generalInterceptor]) // Correct way to add the interceptor
     ),
-  ],
+    provideStore({
+      token : tokenReducer
+    })
+],
 };

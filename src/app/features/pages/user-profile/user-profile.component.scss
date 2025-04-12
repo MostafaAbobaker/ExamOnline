@@ -1,0 +1,79 @@
+@use '../../../../assets/scss/abstracts' as *;
+.user-profile {
+  margin-bottom: rem(40);
+
+  .card-profile {
+    padding: rem(24) rem(32);
+    border-radius: rem(20);
+    box-shadow: 0 rem(15) rem(40) rgba(#000,.05);
+    background-color: #fff;
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(56);
+    @media (max-width: 768px) {
+      padding: rem(16) rem(24);
+    }
+    .card-image {
+      width: rem(216);
+      img {
+        width: 100%;
+      }
+    }
+    .card-profile-body {
+      flex-grow: 1;
+    }
+    .card-title {
+      font-size: rem(32);
+      font-weight: 700;
+      color: $main-color;
+      margin-block-end: rem(4);
+    }
+    .card-text {
+      color: #979CA3;
+    }
+    .progress {
+      height: rem(12);
+      .progress-bar {
+        background-color: $main-color;
+        border-radius: rem(30);
+      }
+    }
+    .card-statistics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: rem(24);
+      margin-block-start: rem(24);
+
+      @media  (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media  (max-width: 576px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+      .stat {
+        display: flex;
+        .stat-icon {
+          width: rem(70);
+          height: rem(70);
+          font-size: rem(32);
+          display: grid;
+          place-items: center;
+          color: $main-color;
+          background-color: #fff;
+          margin-inline-end: rem(16);
+          border-radius: rem(10);
+          box-shadow: 0 rem(15) rem(40) rem(5) #EDEDED;
+        }
+        .stat-value {
+          font-size: clamp( rem(20), 3.5vw,  rem(30));;
+          font-weight: 700;
+          color: #696F79;
+        }
+        p {
+          color: #696F79;
+        }
+      }
+    }
+  }
+}

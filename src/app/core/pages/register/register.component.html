@@ -3,35 +3,73 @@
   <div class="form-floating mb-45">
     <input type="text" class="form-control" id="username" placeholder="User Name" formControlName="username">
     <label for="username">User Name</label>
+    <div class="text-danger" *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid">
+      <span *ngIf="registerForm.get('username')?.getError('required')">Username is required</span>
+      <span *ngIf="registerForm.get('username')?.getError('minlength')">Username must be at least 3 characters long</span>
+
+    </div>
   </div>
   <div class="form-floating mb-45">
     <input type="text" class="form-control" id="firstName" placeholder="First Name" formControlName="firstName">
     <label for="firstName">First Name</label>
+    <div class="text-danger" *ngIf="registerForm.get('firstName')?.touched && registerForm.get('firstName')?.invalid">
+      <span *ngIf="registerForm.get('firstName')?.getError('required')">First Name is required</span>
+
+    </div>
   </div>
 
   <div class="form-floating mb-45">
     <input type="text" class="form-control" id="lastName" placeholder="Last Name" formControlName="lastName">
     <label for="lastName">Last Name</label>
+    <div class="text-danger" *ngIf="registerForm.get('lastName')?.touched && registerForm.get('lastName')?.invalid">
+      <span *ngIf="registerForm.get('lastName')?.getError('required')">Last Name is required</span>
+
+    </div>
   </div>
   <div class="form-floating mb-45">
     <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
     <label for="email">Enter Email</label>
+    <div class="text-danger" *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid">
+      <span *ngIf="registerForm.get('email')?.getError('required')">Email is required</span>
+      <span *ngIf="registerForm.get('email')?.getError('email')">Email is not valid</span>
+
+    </div>
+
   </div>
-  <div class="form-floating mb-45 input-password">
+  <div class="mb-45">
+    <div class="form-floating  input-password">
     <input [type]="passwordStatus ? 'text':'password'" class="form-control" formControlName="password" suggested="current-password" id="Password" placeholder="Password" autocomplete="off">
     <label for="Password">Password</label>
     <a class="position-absolute top-50 translate-middle-y end-0 p-3 text-secondary" (click)="passwordStatus = !passwordStatus"><i class="fa-solid  " [class]="passwordStatus?'fa-eye' : 'fa-eye-slash'"></i></a>
   </div>
-  <div class="form-floating mb-3 input-password">
+    <div class="text-danger" *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid">
+      <span *ngIf="registerForm.get('password')?.getError('required')">Password is required</span>
+      <span *ngIf="registerForm.get('password')?.getError('pattern')">Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character</span>
+    </div>
+  </div>
+  <div class="mb-3">
+    <div class="form-floating  input-password">
     <input [type]="rePasswordStatus ? 'text':'password'" class="form-control" formControlName="rePassword" suggested="current-password" id="rePassword" placeholder="Confirm Password" autocomplete="off">
     <label for="rePassword">Confirm Password</label>
     <a class="position-absolute top-50 translate-middle-y end-0 p-3 text-secondary" (click)="rePasswordStatus = !rePasswordStatus"><i class="fa-solid  " [class]="rePasswordStatus?'fa-eye' : 'fa-eye-slash'"></i></a>
   </div>
+  <div class="text-danger" *ngIf="registerForm.get('rePassword')?.touched && registerForm.get('rePassword')?.invalid">
+    <span *ngIf="registerForm.get('rePassword')?.getError('required')">rePassword is required</span>
+    <span *ngIf="registerForm.get('rePassword')?.getError('pattern')">rePassword must contain at least one uppercase letter, one lowercase letter, one number, and one special character</span>
+  </div>
+  </div>
   <div class="form-floating mb-3">
     <input type="text" class="form-control" id="phone" placeholder="Phone" formControlName="phone">
     <label for="phone">Phone</label>
+    <div class="text-danger" *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid">
+      <span *ngIf="registerForm.get('phone')?.getError('required')">Phone is required</span>
+      <span *ngIf="registerForm.get('phone')?.getError('pattern')">Phone must be a valid number mast start 01</span>
+    </div>
   </div>
   <p class="text-center mb-5">Already have an account?   <a routerLink="../login" class="text-primary ">Login</a>
   </p>
-  <button class="btn btn-primary btn-lg d-block w-100 ">Create Account </button>
+  <button class="btn btn-primary btn-lg d-block w-100 " [disabled]="registerForm.invalid">
+    <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span *ngIf="!loading">Sign up</span>
+  </button>
 </form>

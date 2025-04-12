@@ -1,0 +1,19 @@
+@use '../../../../assets/scss/abstracts' as *;
+.home-layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #FBF9F9;
+  @media (max-width: 768px)  {
+    grid-template-columns:  1fr;
+
+  }
+  .main-content {
+    padding-inline: rem(16);
+    @media (max-width: 768px)  {
+      padding-bottom: rem(78);
+    }
+  }
+}

@@ -5,4 +5,6 @@ export abstract class AuthAPI {
   abstract register(data:any): Observable<any>;
 
   abstract forgotPassword(data:any): Observable<any> ;
+  abstract verifyCode(data:any): Observable<any> ;
+  abstract resetPassword(data:any): Observable<any> ;
 }

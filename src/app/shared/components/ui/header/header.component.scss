@@ -1,0 +1,128 @@
+@use '../../../../../assets/scss/abstracts' as *;
+
+header.header {
+  padding: rem(40) 0;
+  @media  (max-width: 768px) {
+    padding: rem(16) rem(18);
+    background-color: $main-color;
+    color: #fff;
+    position: relative;
+  }
+  .header__container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    @media  (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      .header__logo {
+        margin-inline-end: rem(24) !important;
+        img {
+          filter: brightness(0) invert(1);
+        }
+      }
+      .icon-search {
+        font-size: rem(24);
+      }
+    }
+    .header__search {
+      display: flex;
+      position: relative;
+      transition: all .3s ease-in-out;
+
+      @media  (max-width: 768px) {
+        display: none;
+        position: absolute;
+        top: 100%;
+        inset-inline-start: 0;
+        width: 100%;
+        background-color: #fff;
+        padding: rem(8) rem(24);
+        // flex-wrap: wrap;
+        gap: rem(5);
+        box-shadow: 0 rem(5) rem(15) rgba(#000, 0.1);
+      }
+
+      &.show {
+        display: flex;
+        @media (max-width: 576px) {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+      .form-control {
+        @media  (max-width: 768px) {
+          height: rem(43);
+          min-height: rem(43);
+          padding-block:rem(8) ;
+        }
+      }
+      label {
+
+        @media  (max-width: 768px) {
+          padding-block:rem(8) ;
+        }
+      }
+      .input-group {
+        border-radius: rem(20) !important;
+        height: rem(58);
+        @media  (max-width: 768px) {
+          height: rem(43);
+        }
+        .input-group-text {
+          border-start-start-radius: rem(20) ;
+          border-end-start-radius: rem(20) ;
+          background-color: #fff;
+          border: 1px solid #dee2e6;
+          border-inline-end: none;
+          height: rem(58);
+          flex-shrink: 1;
+          @media  (max-width: 768px) {
+            height: rem(43);
+          }
+        }
+
+        .form-floating {
+          height: rem(58);
+          box-shadow: 0 rem(15) rem(40) rgba(#000,.1);
+
+          @media  (max-width: 768px) {
+            height: rem(43);
+          }
+          .form-control  {
+            border-start-end-radius: rem(20) ;
+          border-end-end-radius: rem(20) ;
+          border-inline-start: none;
+          }
+        }
+      }
+      button {
+        text-wrap: nowrap;
+        margin-inline: rem(24);
+        font-size: clamp(rem(14), 1.5vw, rem(20));
+        font-weight: 600;
+        padding-inline:  rem(46);
+        border-radius: rem(20) !important;
+        height: rem(58);
+        flex-grow: 0;
+        @media  (max-width: 768px) {
+          height: rem(43);
+          padding-inline:  rem(20);
+        }
+      }
+    }
+  }
+  .header__user {
+    margin-inline-start: auto;
+    img {
+      width: rem(58);
+      height: rem(58);
+      border-radius: 50%;
+      box-shadow: 0 rem(15) rem(40) rem(5) #EDEDED;
+      @media  (max-width: 768px) {
+        width: rem(40);
+        height: rem(40);
+        box-shadow: none;
+      }
+    }
+  }
+}

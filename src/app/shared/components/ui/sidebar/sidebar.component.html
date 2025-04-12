@@ -1,0 +1,31 @@
+<aside class="sidebar">
+  <div class="sidebar__header">
+    <a class="sidebar__brands">
+      <img src="../../../../../assets/images/logo.png" alt="">
+    </a>
+  </div>
+  <nav class="sidebar__nav">
+    <ul>
+      <li class="sidebar__item">
+        <a class="sidebar__link" routerLink="/home" routerLinkActive="active">
+          <span class="material-icons icon">space_dashboard</span>          <!-- Filled -->
+          <span class="text">Dashboard</span>
+          </a>
+
+      </li>
+      <li class="sidebar__item">
+        <a class="sidebar__link" routerLink="/history" routerLinkActive="active">
+          <span class="material-icons icon">history</span>          <!-- Filled -->
+          <span class="text">Quiz History</span>
+          </a>
+
+      </li>
+      <li class="sidebar__item">
+        <a class="sidebar__link" (click)="logout()">
+          <span class="material-icons icon">logout</span>          <!-- Filled -->
+          <span class="text">Log Out</span>
+          </a>
+
+      </li>
+    </ul>
+  </nav>
