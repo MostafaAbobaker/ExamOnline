@@ -14,7 +14,7 @@ export class SubjectsService {
       return this._http.get<SubjectsInterface>(`subjects?limit=${num}`)
     }
 
-    getCourseDetails(id:string):Observable<any> {
+    /* getCourseDetails(id:string):Observable<any> {
       return this._http.get(``)
-    }
+    } */
 }
