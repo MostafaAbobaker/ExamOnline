@@ -23,8 +23,6 @@ export const appConfig: ApplicationConfig = {
     provideStore({
       token : authReducer
     }),
-    provideEffects(
-      AuthEffects
-    )
+
 ],
 };

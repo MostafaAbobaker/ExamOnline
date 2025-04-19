@@ -1,11 +1,11 @@
 import { Component, inject, PLATFORM_ID } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { AuthApiService } from 'auth-api';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { LocalStorageService } from '../../../shared/services/local-storage.service';
 import { Store } from '@ngrx/store';
 import { setToken } from '../../../store/auth.actions';
+import { AuthApiService } from 'auth-api';
 
 @Component({
   selector: 'app-login',
@@ -32,9 +32,9 @@ export class LoginComponent {
     this._authApiService.login(this.loginForm.value).subscribe({
       next: (data) => {
         console.log(data);
-        // this._localStorageService.setItem('token', data.token)
+        this._localStorageService.setItem('token', data.token)
         this.loading = false;
-        this._store.dispatch(setToken({token:data.token, rememberMe: true}))
+        // this._store.dispatch(setToken({token:data.token, rememberMe: true}))
 
         this._router.navigate(['/Dashboard'])
       },
