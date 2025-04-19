@@ -9,7 +9,9 @@ import {
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
 import { generalInterceptor } from './shared/interceptor/general.interceptor';
 import { provideStore } from '@ngrx/store';
-import { tokenReducer } from './store/token.reducer';
+import { authReducer } from './store/auth.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { AuthEffects } from './store/auth.effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,7 +21,10 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch(), withInterceptors([generalInterceptor]) // Correct way to add the interceptor
     ),
     provideStore({
-      token : tokenReducer
-    })
+      token : authReducer
+    }),
+    provideEffects(
+      AuthEffects
+    )
 ],
 };

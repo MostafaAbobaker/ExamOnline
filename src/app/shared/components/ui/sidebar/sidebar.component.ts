@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { logout } from '../../../../store/token.actions';
 import { LocalStorageService } from '../../../services/local-storage.service';
 
 @Component({

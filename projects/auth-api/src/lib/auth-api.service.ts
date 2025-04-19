@@ -8,7 +8,6 @@ import { LoginData } from './interfaces/LoginData';
 import { LoginRes } from './interfaces/LoginRes';
 import { RegisterData } from './interfaces/RegisterData';
 import { ForgotPasswordData } from './interfaces/ForgotPasswordData';
-import { logout } from '../../../../src/app/store/token.actions';
 
 @Injectable({
   providedIn: 'root'
