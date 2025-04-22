@@ -1,4 +1,4 @@
-<section class="quizzes-page">
+<section class="subjects-page">
   <div class="title d-flex justify-content-between align-items-center w-100 mb-3">
     <h4 class="text-primary mb-0">Quizes</h4>
     <button class="text-primary btn" (click)="viewAllSubjects()" *ngIf="!showAllList">View All</button>
@@ -10,11 +10,11 @@
 
       <!-- @for(let subject of SubjectsList ) -->
       <div class="col-lg-4 ">
-        <a class="card-quiz" [routerLink]="['/course-details',subject._id]">
+        <a class="card-subjects" [routerLink]="['/course-details',subject._id]">
           <div class="image">
             <img [src]="subject?.icon" alt="">
           </div>
-          <div class="body-quiz">
+          <div class="body-subjects">
             <h5 class="title">{{subject.name}}</h5>
             <!-- <p>Voluptatem aut ut dignissimos blanditiis</p> -->
           </div>

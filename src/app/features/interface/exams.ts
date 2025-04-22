@@ -10,7 +10,7 @@ interface metadataInterface {
   limit: number,
 }
 
-interface exams {
+export interface exams {
 _id: string,
 title: string,
 duration: number,

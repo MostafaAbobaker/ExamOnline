@@ -13,6 +13,13 @@ import { authReducer } from './store/auth.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { AuthEffects } from './store/auth.effects';
 
+
+/* Prim NG */
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
+
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
@@ -23,6 +30,15 @@ export const appConfig: ApplicationConfig = {
     provideStore({
       token : authReducer
     }),
+    provideAnimationsAsync(),
+    providePrimeNG({
+        theme: {
+            preset: Aura
+        }
+    })
 
+    /* provideEffects(
+      AuthEffects
+    ) */
 ],
 };

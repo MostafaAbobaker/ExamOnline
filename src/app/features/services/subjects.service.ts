@@ -13,7 +13,12 @@ export class SubjectsService {
     getSubjects(num?:number):Observable<SubjectsInterface> {
       return this._http.get<SubjectsInterface>(`subjects?limit=${num}`)
     }
-
+    getAllExams(id:string):Observable<any> {
+      return this._http.get(`exams?subject=${id}`)
+    }
+    getSingleSubject(id:string) :Observable<any> {
+      return this._http.get(`subjects/${id}`)
+    }
     /* getCourseDetails(id:string):Observable<any> {
       return this._http.get(``)
     } */

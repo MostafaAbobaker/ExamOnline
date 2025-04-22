@@ -83,7 +83,7 @@ header.header {
 
         .form-floating {
           height: rem(58);
-          box-shadow: 0 rem(15) rem(40) rgba(#000,.1);
+          text-shadow: 0 rem(15) rem(40) rgba(#000,.1);
 
           @media  (max-width: 768px) {
             height: rem(43);

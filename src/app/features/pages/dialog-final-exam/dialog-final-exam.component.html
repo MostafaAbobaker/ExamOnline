@@ -1,0 +1,74 @@
+<p-dialog header="" [modal]="true" [(visible)]="finalExam" [closable]="false"
+ [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+
+
+<div class="content-question">
+  @for (question of answerError; track  question.id;  ) {
+      <h4 class=" mb-3">{{question.question}}</h4>
+      @for (item of question.answers ; track item.key) {
+
+        <div class="form-check " [class.bg-success-subtle]="question.correctAnswer == item.key" [class.bg-danger-subtle]="question.answerUserKey == item.key">
+          <!-- <input class="form-check-input" type="radio" name="radioDefault"
+                  [id]="question.id+item.key" [value]="question.answerUserKey"
+                  [checked]="question.answerUserKey == item.key" readonly="true"/> -->
+
+                  <input
+                  class="form-check-input"
+                  type="radio"
+                  [name]="question.question"
+                  [id]="question.id+item.key"
+                  [value]="question.answerUserKey"
+                  [checked]="question.answerUserKey == item.key"
+                  disabled="true"
+                />
+
+          <label class="form-check-label" [for]="question.id+item.key">
+            {{ item.answer}}
+          </label>
+        </div>
+      }
+
+  }
+
+</div>
+
+<!-- <div class="content-question">
+  @for (question of answerError; track question.id; ) {
+    <h4 class="mb-3">{{ question.question }}</h4>
+    @for (item of question.answers; track item.key) {
+      <div
+        class="form-check"
+        [class.bg-success-subtle]="question.correctAnswer == item.key"
+        [class.bg-danger-subtle]="question.answerUserKey == item.key"
+      >
+        <input
+          class="form-check-input"
+          type="radio"
+          [name]="question.id"
+          [id]="question.id + item.key"
+          [value]="item.key"
+          [checked]="question.answerUserKey == item.key"
+          disabled="true"
+        />
+        <label class="form-check-label" [for]="question.id + item.key">
+          {{ item.answer }}
+        </label>
+      </div>
+    }
+  }
+</div> -->
+
+
+
+
+
+  <div class="d-flex justify-content-between gap-2 mt-4">
+    <a class="btn btn-outline-primary d-block w-100" routerLink="/">Back</a>
+  </div>
+</p-dialog>
+
+
+
+
+

@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+body .p-radiobutton {
+  .p-radiobutton-box {
+    background-color: #fff;
+    color: #333;
+
+  }
+  &.p-radiobutton-checked {
+
+    .p-radiobutton-box {
+      border-color: $main-color;
+      background: #fff;
+
+
+      .p-radiobutton-icon {
+        background-color: $main-color;
+      }
+    }
+    &:not(.p-disabled):has(.p-radiobutton-input:hover) {
+      .p-radiobutton-box {
+        border-color: $main-color;
+        background: #fff;
+        box-shadow: 0 0 4px 1px rgba($main-color , 0.5);
+        .p-radiobutton-icon {
+          background-color: $main-color;
+        }
+      }
+
+    }
+  }
+}

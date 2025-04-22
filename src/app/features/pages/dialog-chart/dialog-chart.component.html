@@ -1,0 +1,14 @@
+<p-dialog header="Your score" [modal]="true" [(visible)]="dialogChart" [closable]="false"
+ [style]="{ width: '25rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+  <p-chart type="doughnut" [data]="data" [options]="options" class="w-full md:w-[200px] md:h-[100px]" />
+
+  <div class="d-flex justify-content-between gap-2">
+    <a class="btn btn-outline-primary d-block w-100" routerLink="/">Back</a>
+    <button class="btn btn-primary d-block w-100" (click)="ShowResults()">Show results</button>
+  </div>
+</p-dialog>
+@if(finalExam) {
+
+  <app-dialog-final-exam [answerError]="answerError" [finalExam]="finalExam"></app-dialog-final-exam>
+}

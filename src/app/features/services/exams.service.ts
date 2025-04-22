@@ -10,7 +10,11 @@ export class ExamsService {
 
   constructor(private _http:HttpClient) { }
 
-  getExams():Observable<ExamInterface> {
+  /* getExams():Observable<ExamInterface> {
     return this._http.get<ExamInterface>('exams')
+  } */
+
+  getAllQuestionsExam(id:string):Observable<any> {
+    return this._http.get(`questions?exam=${id}`)
   }
 }

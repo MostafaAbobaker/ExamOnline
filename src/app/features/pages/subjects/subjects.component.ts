@@ -8,12 +8,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-quizzes',
+  selector: 'app-subjects',
   imports: [CommonModule , RouterModule],
-  templateUrl: './quizzes.component.html',
-  styleUrl: './quizzes.component.scss'
+  templateUrl: './subjects.component.html',
+  styleUrl: './subjects.component.scss'
 })
-export class QuizzesComponent implements OnInit{
+export class SubjectsComponent implements OnInit{
   allSubjects:number  | undefined= 6;
   SubjectsList?:subjectItem [];
   showAllList:boolean =false;

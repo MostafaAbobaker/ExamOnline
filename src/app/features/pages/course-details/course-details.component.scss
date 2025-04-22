@@ -1,0 +1,36 @@
+@use "../../../../assets/scss/abstracts" as *;
+.card-subject {
+  display: flex;
+  gap: rem(16);
+  background-color: #fff;
+  border-radius: rem(10);
+  box-shadow: 0 15px 40px rgba(42, 41, 41, 0.051);
+  padding: rem(16) rem(24);
+  margin-bottom: rem(24);
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: rgba($main-color, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .image {
+    flex-shrink: 0;
+    width: 70px;
+    img {
+      width: 100%;
+    }
+  }
+  .card-body {
+    flex-grow: 1;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .card-action {
+    text-align: center;
+    /* p{
+      margin-bottom: 5px;
+    } */
+  }
+}

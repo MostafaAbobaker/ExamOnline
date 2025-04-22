@@ -1,1 +1,33 @@
-<p>course-details works!</p>
+<h4 class="title">{{subjectsItem?.name | uppercase }}</h4>
+@for(exam of examsList ; track exam._id) {
+  <div class="card-subject" >
+    <div class="image">
+      <img src="../../../../assets/images/{{subjectsItem?.name}}.png" alt="">
+    </div>
+    <div class="card-body">
+      <h4 class="card-title">{{exam.title}} </h4>
+      <p>{{exam.numberOfQuestions}} Question</p>
+    </div>
+    <div class="card-action">
+      <p class="time ">{{exam.duration}} Minutes</p>
+      <a  class="btn btn-primary" (click)="showDialog(exam._id , exam.duration)">Start</a>
+    </div>
+  </div>
+
+} @empty {
+  <div class="bg-white rounded-4 shadow-lg text-center p-5">
+    <div class="image mx-auto text-center">
+      <img src="../../../../assets/images/empty-page.svg" height="100" alt="" class="text-center mx-auto">
+      <h4 class="text-center mt-4 text-dark">No Data Found !
+      </h4>
+    </div>
+
+  </div>
+}
+@if(visibleDialog) {
+
+  <app-dialog-exam [examId]="examId"  [visibleDialog]="visibleDialog" [minutes]="examDuration"></app-dialog-exam>
+}
+
+
+

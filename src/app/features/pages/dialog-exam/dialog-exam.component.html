@@ -1,0 +1,65 @@
+<p-dialog header="Instructions" [modal]="true" [(visible)]="visibleDialog" [closable]="false"
+ [style]="{ width: '25rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+ <p>Do you Want To start Exam</p>
+  <div class="flex justify-end gap-2">
+    <button class="btn btn-primary d-block w-100" (click)="startExam()">Start</button>
+  </div>
+</p-dialog>
+
+
+<p-dialog header="" [modal]="true" [(visible)]="visibleExam" [closable]="false"
+ [style]="{ width: '50rem' }" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+>
+<div class="header d-flex justify-content-between align-items-center">
+
+  <h4>Question {{selectQuestion + 1}} of {{questionsList.length}}</h4>
+  <div class="time d-flex align-items-center fw-bold">
+    <i class="fa-solid fa-stopwatch me-2"></i>
+    {{ minutes }}:{{ seconds | number: '2.0' }}
+  </div>
+</div>
+<div class="d-flex my-4 gap-3 justify-content-lg-evenly">
+
+@for (question of questionsList; track  question._id;  let  i = $index) {
+  <span class="icon " [class]="selectQuestion == i || selectQuestion > i? 'text-primary':'text-secondary'"><i class="fa-solid fa-circle"></i></span>
+}
+</div>
+<div class="content-question">
+  @for (question of questionsList; track  question._id;  let  i = $index) {
+    @if(selectQuestion == i) {
+      <h4 class=" mb-3">{{question.question}}</h4>
+      @for (item of question.answers ; track item.key) {
+        <!-- <div class="field-checkbox mb-4">
+          <p-radiobutton [inputId]="item.key" name="category" [value]="item" [(ngModel)]="RadioButtonValue" />
+          <label [for]="item.key" class="ms-2">{{ item.answer}}</label>
+        </div> -->
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="radioDefault" [id]="item.key" [value]="item.answer" [(ngModel)]="RadioButtonValue" />
+          <label class="form-check-label" [for]="item.key">
+            {{ item.answer}}
+          </label>
+        </div>
+      }
+    }
+  }
+
+</div>
+
+  <div class="d-flex justify-content-between gap-2 mt-4">
+    <button class="btn btn-outline-primary d-block w-100" (click)="startExam()"  (click)="backQuestion()" [disabled]="selectQuestion ==0">Back</button>
+    @if (selectQuestion < questionsList.length -1) {
+      <button class="btn btn-primary d-block w-100" (click)="startExam()"  (click)="andAnswer()" [disabled]="RadioButtonValue == undefined">Next</button>
+    }
+    @if(selectQuestion == questionsList.length - 1) {
+    <!-- @if(selectQuestion < questionsList.length - 1) { -->
+
+      <button class="btn btn-primary d-block w-100" (click)="FinishExam()" [disabled]="RadioButtonValue == undefined">Finish Exam</button>
+    }
+  </div>
+</p-dialog>
+
+@if(dialogChart) {
+
+  <app-dialog-chart [dialogChart]="dialogChart" [questionsList]="questionsList" [answerError]="answerError"></app-dialog-chart>
+}
